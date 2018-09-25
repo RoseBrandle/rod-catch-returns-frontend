@@ -23,7 +23,7 @@
                     titleText: "There is a problem",
                     errorList: [
                         {
-                            text: "You have not entered a correct licence number and post code",
+                            text: "You have not entered a correct licence number and postcode",
                             href: "#licence"
                         }
                     ]
@@ -31,12 +31,12 @@
             {% endif %}
 
             <h1 class="govuk-heading-xl">
-                Report your salmon or sea trout catch
+                Sign in
             </h1>
 
             {% call govukFieldset({
                 legend: {
-                    html: "Your licence details",
+                    html: "Enter your licence details and postcode",
                     classes: "govuk-fieldset__legend--l",
                     isPageHeading: false
                 }
@@ -57,7 +57,7 @@
 
                 {{ govukInput({
                     label: {
-                        text: "Postcode for this licence"
+                        text: "UK postcode"
                     },
                     hint: {
                         text: "For example, WA4 1HT"
@@ -75,7 +75,7 @@
 
                 {{ govukDetails({
                     summaryText: "I don't know my licence number",
-                    html: "Call us on 03708 506 506 (open 8am to 6pm Monday to Friday) or <a href=\"mailto:enquiries@environment-agency.gov.uk\">email us at enquiries@environment-agency.gov.uk</a> and we’ll help you find your licence details."
+                    html: "Your licence number can be found on any related correspondence from us. If you can’t find it, call us on 03708 506 506 (open 8am to 6pm, Monday to Friday) or email us at enquiries@environment-agency.gov.uk."
                 }) }}
 
             {% endcall %}
