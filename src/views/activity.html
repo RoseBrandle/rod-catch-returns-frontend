@@ -14,7 +14,7 @@
     }) }}
 {% endblock %}
 
-{% block pageTitle %}Details for the river where you fished{% endblock %}
+{% block pageTitle %}Add a river{% endblock %}
 
 {% set items = [] %}
 {% for river in rivers %}
@@ -42,7 +42,7 @@
         {% if error.Activity === "EMPTY" %}
             {% set daysErrorMessage = { text: "Enter a number between 1 and 365" } %}
             {{ errorList.push({
-                text: "You have not entered the number of days you fished the river",
+                text: "You have not entered the number of days you fished",
                 href: "#days"
             }) }}
         {% endif %}
@@ -50,7 +50,7 @@
         {% if error.Activity === "NOT_A_NUMBER" or error.Activity === 'ACTIVITY_DAYS_MAX_EXCEEDED' or error.Activity === 'ACTIVITY_DAYS_NOT_GREATER_THAN_ZERO' %}
             {% set daysErrorMessage = { text: "Enter a number between 1 and 365" } %}
             {{ errorList.push({
-                text: "You have not entered a valid number of days you fished the river",
+                text: "You have not entered a valid number of days",
                 href: "#days"
             }) }}
         {% endif %}
@@ -73,19 +73,19 @@
 
             {% call govukFieldset({
               legend: {
-                text: "Details for the river where you fished",
+                text: "Add a river",
                 classes: "govuk-fieldset__legend--l",
                 isPageHeading: true
               }
             }) %}
-
+            
                 {{ govukSelect({
                     id: "river",
                     name: "river",
                     label: {
                         text: "Name of river"
                     },
-                    hint: { text: "e.g. Derwent (Cumbria)" },
+                    hint: { text: "For example, Derwent (Cumbria)" },
                     items: [ { value: null } ].concat(items),
                     errorMessage: riverErrorMessage
                 }) }}
@@ -94,7 +94,7 @@
                     id: "days",
                     name: "days",
                     label: {
-                        text: "How many days did you fish this river?"
+                        text: "How many days did you fish in this river?"
                     },
                     hint: { text: "Include days without a catch" },
                     value: payload.days,
