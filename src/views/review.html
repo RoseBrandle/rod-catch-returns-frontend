@@ -66,13 +66,9 @@
             <h1 class="govuk-heading-l">{{ title }}</h1>
 
             {% if not locked %}
-                <p class="govuk-body">
-                    Check that your return is accurate, then submit. Once submitted, your return cannot be changed.
-                </p>
+                <p class="govuk-body">If you’ve finished fishing for salmon and sea trout this season, select ‘Submit catch return’. If you plan to fish again for salmon or sea trout this season, click ‘Cancel’, then select 'Save as draft'.</p>
 
-                <p class="govuk-body">
-                    If you need to make changes, select 'Cancel'.
-                </p>
+                <p class="govuk-body">You can continue to fish for non-migratory trout and freshwater fish as long as your licence is valid.</p>
             {% endif %}
 
              {{ govukTable({
@@ -89,7 +85,7 @@
              {% if activities.length %}
                 {% if smallCatches.length %}
                     {{ govukTable({
-                        caption: "Small catches (sea trout 1lb and under)",
+                        caption: "Small adult sea trout (1lb and under)",
                         captionClasses: "govuk-heading-m",
                         firstCellIsHeader: false,
                         head: [
@@ -106,7 +102,7 @@
 
                 {% if catches.length %}
                     {{ govukTable({
-                        caption: "Salmon and large sea trout",
+                        caption: "Salmon and large adult sea trout",
                         captionClasses: "govuk-heading-m",
                         firstCellIsHeader: false,
                         head: [
